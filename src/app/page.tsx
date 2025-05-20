@@ -82,6 +82,32 @@ export default function Page() {
         </div>
       </section>
 
+      <section id="skills" className="max-w-3xl pl-[196px] mt-10">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Skills</h2>
+          </BlurFade>
+        
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.skills.map((section, id) => (
+                <BlurFade
+                  key={section.category}
+                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                >
+                  <SkillCard
+                    category={section.category}
+                    skills={section.skills}
+                    image={section.image}
+                  />
+                </BlurFade>
+              ))}
+            </ul>
+          </BlurFade>
+
+        </div>
+      </section>
+
       <section id="work" className="max-w-3xl mx-auto px-6">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -127,32 +153,6 @@ export default function Page() {
               />
             </BlurFade>
           ))}
-        </div>
-      </section>
-
-      <section id="skills" className="max-w-3xl pl-[196px] mt-10">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
-          </BlurFade>
-        
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
-            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-              {DATA.skills.map((section, id) => (
-                <BlurFade
-                  key={section.category}
-                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                >
-                  <SkillCard
-                    category={section.category}
-                    skills={section.skills}
-                    image={section.image}
-                  />
-                </BlurFade>
-              ))}
-            </ul>
-          </BlurFade>
-
         </div>
       </section>
 
